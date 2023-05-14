@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Попрыженок"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" IsVisibleChanged="Window_IsVisibleChanged">
+        Title="Агенты" Height="450" Width="800" IsVisibleChanged="Window_IsVisibleChanged" Activated="Window_Activated">
     <ScrollViewer>
         <StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBox Margin="5">Введите для поиска</TextBox>
+                <TextBox Margin="5" Width="150" x:Name="searchTB" TextChanged="searchTB_TextChanged">Введите для поиска</TextBox>
                 <ComboBox Margin="5" x:Name="sortCB" SelectionChanged="sortCB_SelectionChanged">
                     <ComboBoxItem IsSelected="True">по умолчанию</ComboBoxItem>
                     <ComboBoxItem>по наименованию (по возрастанию)</ComboBoxItem>
@@ -19,7 +19,7 @@
                     <ComboBoxItem>по приоритету (по возрастанию)</ComboBoxItem>
                     <ComboBoxItem>по приоритету (по убыванию)</ComboBoxItem>
                 </ComboBox>
-                <ComboBox Margin="5">
+                <ComboBox Margin="5" x:Name="filterCB" SelectionChanged="filterCB_SelectionChanged">
                     <ComboBoxItem IsSelected="True">Все типы</ComboBoxItem>
                     <ComboBoxItem>МКК</ComboBoxItem>
                     <ComboBoxItem>ОАО</ComboBoxItem>
@@ -28,6 +28,8 @@
                     <ComboBoxItem>МФО</ComboBoxItem>
                     <ComboBoxItem>ПАО</ComboBoxItem>
                 </ComboBox>
+                <Button Margin="5" Click="Button_Click">Добавить агента</Button>
+                <Button Margin="5" Visibility="Hidden" x:Name="changePriorityButton" Click="changePriorityButton_Click">Изменить приоритет на ...</Button>
             </StackPanel>
             <StackPanel x:Name="agentsPanel" HorizontalAlignment="Center"/>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" x:Name="pagesPanel"/>

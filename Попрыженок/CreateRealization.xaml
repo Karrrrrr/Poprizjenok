@@ -1,0 +1,45 @@
+﻿<Window x:Class="Попрыженок.CreateRealization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Попрыженок"
+        mc:Ignorable="d"
+        Title="Добавить реализацию" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="text">
+            <Setter Property="ItemsControl.HorizontalAlignment" Value="Right"/>
+            <Setter Property="ItemsControl.VerticalAlignment" Value="Center"/>
+            <Setter Property="ItemsControl.Margin" Value="10"/>
+        </Style>
+        <Style x:Key="box">
+            <Setter Property="ItemsControl.VerticalAlignment" Value="Center"/>
+            <Setter Property="ItemsControl.Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Style="{StaticResource text}">Название товара:</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource box}" x:Name="nameTB"/>
+        <TextBlock Grid.Row="2" Style="{StaticResource text}">Цена товара:</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource box}" x:Name="priceTB"/>
+        <TextBlock Grid.Row="3" Style="{StaticResource text}">Количество:</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="3" Style="{StaticResource box}" x:Name="countTB"/>
+        <TextBlock Grid.Row="4" Style="{StaticResource text}">Дата продажи:</TextBlock>
+        <DatePicker Grid.Column="1" Grid.Row="4" Style="{StaticResource box}" x:Name="datePicker"/>
+        <Button Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" Click="Button_Click">Готово</Button>
+    </Grid>
+</Window>
